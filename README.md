@@ -1,51 +1,25 @@
+### Description:
+This repo is for testing log streaming API. 
+
+Log files are stored in `var/log` of this project folder. 
+This folder can be used to add more log files.
+
+
 ### How to run locally:
+Prerequiste: NodeJS minimum version 20.11.6
 
-Step 1: Build the project
-
+Step 1: Run install command to install dependencies
 ```
-npm run build
+npm install
 ```
 
-Step 2: Then start the server with
-
+Step 2: Run server
 ```
 npm run start
 ```
 
-The server should be served at port 3000 by default.
 
----
-
-### How to run on local Docker Container
-
-Step 1: Install Docker.
-
-Step 2: Start the server in docker container
-
+Step 3: Open localhost and start running the API:
 ```
-docker run --platform linux/amd64 -p 9000:8080 gopalbackend:latest
+http://localhost:3001/api-docs/#/default/getLog
 ```
-
-Step 3: To test, open another terminal and run:
-
-```
-curl -X Get "http://localhost:9000/v1/delivery"
-```
-
-Step 4: To bash into docker container, run:
-
-```
-docker run --rm -it --entrypoint /bin/bash gopalbackend:latest
-```
-
----
-
-### How to run on AWS lambda:
-
-Step 1: Build the project
-
-```
-npm run build
-```
-
-Step 2: Import the `index.zip` file in `dist` folder to AWS lambda
